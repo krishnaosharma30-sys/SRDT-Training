@@ -3,243 +3,463 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYNSTRA - Online Shopping for Women, Men & Kids</title>
+    <title>Mynthra — Online Shopping for Men, Women, Footwear & Beauty</title>
+    <meta name="description" content="Shop the latest fashion trends at Mynthra. Best offers on Men, Women, Footwear, Watches, and Beauty products with fast delivery & easy returns.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="top-banner">
-        FLAT ₹400 OFF ON FIRST ORDER | USE CODE: <span>MYNSTRA400</span>
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-announcement">
+        <div class="announcement-content">
+            <span>🎉 MYNTHRA GRAND FASHION FESTIVAL: FLAT 50% - 80% OFF</span>
+            <span class="sep">|</span>
+            <span>Use Code <b>MYNTHRA500</b> for Extra ₹500 OFF on orders above ₹1,999</span>
+            <span class="sep">|</span>
+            <span>🚚 FREE Delivery on All Prepaid Orders</span>
+        </div>
     </div>
 
-    <!-- Header Navbar -->
-    <header class="navbar">
-        <div class="logo"><a href="index.html">MYNSTRA</a></div>
-        
-        <nav class="nav-links">
-            <div class="nav-item">
-                <a href="#">MEN</a>
-                <!-- Mega Menu linked to HTML files -->
-                <div class="mega-menu">
-                    <div class="menu-column">
-                        <h4>Topwear</h4>
-                        <a href="tshirts.html">T-Shirts</a>
-                        <a href="shirts.html">Casual Shirts</a>
-                    </div>
-                    <div class="menu-column">
-                        <h4>Bottomwear</h4>
-                        <a href="jeans.html">Jeans</a>
+    <!-- MAIN HEADER -->
+    <header class="main-header" id="top">
+        <div class="header-container">
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Brand Logo -->
+            <a href="#top" class="brand-logo">
+                <span class="logo-mark">M</span>
+                <span class="logo-text">MYNTHRA</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-links" id="mainNav">
+                <a href="#products" class="nav-item active" data-category="All">ALL</a>
+                <a href="#products" class="nav-item" data-category="Men">MEN</a>
+                <a href="#products" class="nav-item" data-category="Women">WOMEN</a>
+                <a href="#products" class="nav-item" data-category="Footwear">FOOTWEAR</a>
+                <a href="#products" class="nav-item" data-category="Accessories">ACCESSORIES</a>
+                <a href="#products" class="nav-item" data-category="Beauty">BEAUTY</a>
+                <a href="#offers" class="nav-item highlight-nav">OFFERS <span class="nav-tag">NEW</span></a>
+            </nav>
+
+            <!-- Search Bar -->
+            <div class="search-box">
+                <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Search for products, brands and more" autocomplete="off">
+                <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear search">✕</button>
+                <div class="search-kbd-hint">Ctrl K</div>
+            </div>
+
+            <!-- Action Controls (Profile, Wishlist, Bag) -->
+            <div class="header-actions">
+                <!-- Profile with dropdown -->
+                <div class="action-item profile-action" id="profileDropdownTrigger">
+                    <button class="action-btn" aria-label="Account">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span class="action-label">Profile</span>
+                    </button>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <div class="dropdown-header">
+                            <h4>Welcome to Mynthra</h4>
+                            <p>To access your wishlist and orders</p>
+                            <button class="btn-primary-sm" onclick="showToast('Login system ready for customer demo!')">LOGIN / SIGN UP</button>
+                        </div>
+                        <ul class="dropdown-list">
+                            <li><a href="#wishlist" id="openWishlistFromMenu">My Wishlist</a></li>
+                            <li><a href="#orders" onclick="showToast('No recent orders yet')">Orders & Returns</a></li>
+                            <li><a href="#contact" onclick="showToast('Customer Care: 1800-MYNTHRA')">Help & Support</a></li>
+                        </ul>
                     </div>
                 </div>
+
+                <!-- Wishlist -->
+                <button class="action-item action-btn" id="wishlistBtn" aria-label="View Wishlist">
+                    <div class="icon-wrap">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="action-badge" id="wishlistCount">0</span>
+                    </div>
+                    <span class="action-label">Wishlist</span>
+                </button>
+
+                <!-- Bag / Cart -->
+                <button class="action-item action-btn" id="cartBtn" aria-label="View Shopping Bag">
+                    <div class="icon-wrap">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="action-badge" id="cartCount">0</span>
+                    </div>
+                    <span class="action-label">Bag</span>
+                </button>
             </div>
-            <div class="nav-item"><a href="#">WOMEN</a></div>
-            <div class="nav-item"><a href="#">KIDS</a></div>
-        </nav>
-
-        <div class="search-bar">
-            <input type="text" placeholder="Search for products, brands and more">
-        </div>
-
-        <div class="action-icons">
-            <div class="icon-btn"><span class="icon">👤</span><span class="text">Profile</span></div>
-            <div class="icon-btn"><span class="icon">♡</span><span class="text">Wishlist</span></div>
-            <div class="icon-btn"><span class="icon">🛍</span><span class="text">Bag</span></div>
         </div>
     </header>
 
     <main>
-        <!-- Hero Slider Banner -->
-        <section class="slider-container">
-            <div class="slider-track">
-                <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1280&h=350&fit=crop" alt="Banner 1">
-                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1280&h=350&fit=crop" alt="Banner 2">
-                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1280&h=350&fit=crop" alt="Banner 3">
+        <!-- HERO BANNER CAROUSEL -->
+        <section class="hero-section" id="offers">
+            <div class="hero-slider" id="heroSlider">
+                <!-- Slide 1 -->
+                <div class="hero-slide active">
+                    <img src="image/WhatsApp Image 2026-11-16 at 7.37.08 PM.jpeg" alt="Mynthra Festive Season Sale" class="hero-bg-img">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-caption">
+                        <span class="hero-pill">EXCLUSIVE EDIT 2026</span>
+                        <h1 class="hero-title">BIG FASHION<br>FESTIVAL</h1>
+                        <p class="hero-subtitle">50 - 80% OFF ON 10,000+ TOP FASHION BRANDS</p>
+                        <div class="hero-cta-group">
+                            <a href="#products" class="btn-primary" data-category="All">EXPLORE DEALS →</a>
+                            <span class="hero-code-tag">Use Code: <b>MYNTHRA500</b></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="hero-slide">
+                    <img src="image/WhatsApp Image 2026-11-16 at 7.37.09 PM.jpeg" alt="Mynthra Modern Streetwear Edit" class="hero-bg-img">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-caption">
+                        <span class="hero-pill">NEW SEASON ARRIVALS</span>
+                        <h1 class="hero-title">URBAN STYLES<br>& SNEAKERS</h1>
+                        <p class="hero-subtitle">PREMIUM FABRICS, TIMELESS CUTS, ELEVATED EVERYDAY WEAR</p>
+                        <div class="hero-cta-group">
+                            <a href="#products" class="btn-primary" data-category="Men">SHOP MEN →</a>
+                            <a href="#products" class="btn-secondary" data-category="Women">SHOP WOMEN →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="slider-arrow prev" id="sliderPrev" aria-label="Previous Slide">‹</button>
+            <button class="slider-arrow next" id="sliderNext" aria-label="Next Slide">›</button>
+            <div class="slider-dots" id="sliderDots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
             </div>
         </section>
 
-        <!-- Deals Highlight -->
-        <section class="deals-highlight">
-            <div class="deal-card">FLAT 50% OFF</div>
-            <div class="deal-card">BUY 1 GET 1 FREE</div>
-            <div class="deal-card">MIN 60% OFF</div>
-            <div class="deal-card">CLEARANCE SALE</div>
+        <!-- BANK & TRUST STRIP -->
+        <div class="trust-strip">
+            <div class="trust-item">
+                <span class="trust-icon">💳</span>
+                <div>
+                    <strong>10% INSTANT DISCOUNT</strong>
+                    <small>On HDFC & ICICI Bank Credit Cards</small>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">🔄</span>
+                <div>
+                    <strong>14 DAYS EASY RETURN</strong>
+                    <small>Hassle-free doorstep pickup</small>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">✨</span>
+                <div>
+                    <strong>100% ORIGINAL GUARANTEE</strong>
+                    <small>Directly sourced from verified brands</small>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">⚡</span>
+                <div>
+                    <strong>EXPRESS DELIVERY</strong>
+                    <small>Fast dispatch within 24 hours</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK SHOP BY CATEGORY -->
+        <section class="section category-section">
+            <div class="section-heading">
+                <div>
+                    <h2 class="title">EXPLORE BY CATEGORY</h2>
+                    <p class="subtitle">Handpicked collections crafted for your lifestyle</p>
+                </div>
+            </div>
+
+            <div class="category-grid">
+                <div class="category-card" data-category="Men">
+                    <div class="cat-img-box">
+                        <img src="image/WhatsApp Image 2026-11-16 at 7.37.11 PM.jpeg" alt="Men's Fashion" loading="lazy">
+                    </div>
+                    <h3 class="cat-name">Men's Wear</h3>
+                    <span class="cat-offer">Min. 40% Off</span>
+                </div>
+
+                <div class="category-card" data-category="Women">
+                    <div class="cat-img-box">
+                        <img src="image/WhatsApp Image 2026-11-16 at 7.37.10 PM.jpeg" alt="Women's Fashion" loading="lazy">
+                    </div>
+                    <h3 class="cat-name">Women's Wear</h3>
+                    <span class="cat-offer">40 - 70% Off</span>
+                </div>
+
+                <div class="category-card" data-category="Footwear">
+                    <div class="cat-img-box">
+                        <img src="image/WhatsApp Image 2026-11-16 at 7.37.10 PM (1).jpeg" alt="Footwear & Sneakers" loading="lazy">
+                    </div>
+                    <h3 class="cat-name">Footwear</h3>
+                    <span class="cat-offer">Up to 60% Off</span>
+                </div>
+
+                <div class="category-card" data-category="Accessories">
+                    <div class="cat-img-box">
+                        <img src="image/WhatsApp Image 2026-11-16 at 7.37.09 PM (1).jpeg" alt="Bags & Accessories" loading="lazy">
+                    </div>
+                    <h3 class="cat-name">Handbags & Belts</h3>
+                    <span class="cat-offer">Flat 50% Off</span>
+                </div>
+
+                <div class="category-card" data-category="Accessories">
+                    <div class="cat-img-box">
+                        <img src="image/WhatsApp Image 2026-11-16 at 7.37.11 PM (1).jpeg" alt="Watches & Eyewear" loading="lazy">
+                    </div>
+                    <h3 class="cat-name">Watches</h3>
+                    <span class="cat-offer">Starting ₹1,299</span>
+                </div>
+
+                <div class="category-card" data-category="Beauty">
+                    <div class="cat-img-box">
+                        <img src="image/WhatsApp Image 2026-11-16 at 7.37.12 PM.jpeg" alt="Beauty & Skincare" loading="lazy">
+                    </div>
+                    <h3 class="cat-name">Beauty & Glow</h3>
+                    <span class="cat-offer">Buy 1 Get 1 Free</span>
+                </div>
+            </div>
         </section>
 
-        <h2 class="section-title">TRENDING STYLES (50+ PRODUCTS)</h2>
-
-        <!-- Product Grid (50+ Items) -->
-        <section class="product-grid">
-
-            <!-- Card 1 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img class="primary-img" src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=350&h=450&fit=crop" alt="Item 1">
-                    <img class="secondary-img" src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=350&h=450&fit=crop" alt="Hover">
+        <!-- MAIN PRODUCTS CATALOG SECTION -->
+        <section class="section products-section" id="products">
+            <div class="products-header">
+                <div class="header-left">
+                    <h2 class="title" id="productsSectionTitle">TRENDING NOW</h2>
+                    <span class="product-count-badge" id="productCountBadge">12 Styles Available</span>
                 </div>
-                <div class="product-info">
-                    <h3 class="brand">Roadster</h3>
-                    <p class="description">Pure Cotton Casual Shirt</p>
-                    <p class="price">Rs. 699 <span class="strikethrough">Rs. 1399</span> <span class="discount">(50% OFF)</span></p>
-                </div>
-                <div class="hover-action">
-                    <button class="wishlist-btn">♡ WISHLIST</button>
-                    <div class="size-bar">Sizes: S, M, L, XL</div>
+
+                <!-- Sort & View Controls -->
+                <div class="controls-right">
+                    <label for="sortSelect" class="sort-label">Sort by:</label>
+                    <div class="select-wrapper">
+                        <select id="sortSelect">
+                            <option value="recommended">Recommended</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="discount">Better Discount</option>
+                            <option value="rating">Customer Rating</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
-            <!-- Card 2 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img class="primary-img" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=350&h=450&fit=crop" alt="Item 2">
-                    <img class="secondary-img" src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=350&h=450&fit=crop" alt="Hover">
-                </div>
-                <div class="product-info">
-                    <h3 class="brand">Puma</h3>
-                    <p class="description">Printed Slim Fit T-Shirt</p>
-                    <p class="price">Rs. 499 <span class="strikethrough">Rs. 999</span> <span class="discount">(50% OFF)</span></p>
-                </div>
-                <div class="hover-action">
-                    <button class="wishlist-btn">♡ WISHLIST</button>
-                    <div class="size-bar">Sizes: M, L, XL</div>
-                </div>
+            <!-- Filter Chips Bar -->
+            <div class="filter-chips" id="filterChips">
+                <button class="chip active" data-filter="All">All Items</button>
+                <button class="chip" data-filter="Men">Men</button>
+                <button class="chip" data-filter="Women">Women</button>
+                <button class="chip" data-filter="Footwear">Footwear</button>
+                <button class="chip" data-filter="Accessories">Accessories</button>
+                <button class="chip" data-filter="Beauty">Beauty</button>
             </div>
 
-            <!-- Card 3 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img class="primary-img" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=350&h=450&fit=crop" alt="Item 3">
-                    <img class="secondary-img" src="https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=350&h=450&fit=crop" alt="Hover">
-                </div>
-                <div class="product-info">
-                    <h3 class="brand">Levi's</h3>
-                    <p class="description">511 Slim Fit Blue Denim Jeans</p>
-                    <p class="price">Rs. 1899 <span class="strikethrough">Rs. 3799</span> <span class="discount">(50% OFF)</span></p>
-                </div>
-                <div class="hover-action">
-                    <button class="wishlist-btn">♡ WISHLIST</button>
-                    <div class="size-bar">Sizes: 30, 32, 34, 36</div>
-                </div>
+            <!-- PRODUCT GRID -->
+            <div class="product-grid" id="productGrid">
+                <!-- Injected dynamically via script.js -->
             </div>
 
-            <!-- Card 4 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img class="primary-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=350&h=450&fit=crop" alt="Item 4">
-                    <img class="secondary-img" src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=350&h=450&fit=crop" alt="Hover">
-                </div>
-                <div class="product-info">
-                    <h3 class="brand">Nike</h3>
-                    <p class="description">Air Max Cushioned Sneakers</p>
-                    <p class="price">Rs. 3499 <span class="strikethrough">Rs. 6999</span> <span class="discount">(50% OFF)</span></p>
-                </div>
-                <div class="hover-action">
-                    <button class="wishlist-btn">♡ WISHLIST</button>
-                    <div class="size-bar">Sizes: UK 7, 8, 9, 10</div>
-                </div>
+            <!-- Empty State for Search / Filter -->
+            <div class="empty-state" id="emptyState" hidden>
+                <div class="empty-icon">🔍</div>
+                <h3>We couldn't find any matches</h3>
+                <p>Try searching with another keyword or reset the category filters.</p>
+                <button class="btn-primary" id="resetFilterBtn">View All Products</button>
             </div>
+        </section>
 
-            <!-- Card 5 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img class="primary-img" src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=350&h=450&fit=crop" alt="Item 5">
-                    <img class="secondary-img" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=350&h=450&fit=crop" alt="Hover">
-                </div>
-                <div class="product-info">
-                    <h3 class="brand">HERENOW</h3>
-                    <p class="description">Floral A-Line Midi Dress</p>
-                    <p class="price">Rs. 1199 <span class="strikethrough">Rs. 2999</span> <span class="discount">(60% OFF)</span></p>
-                </div>
-                <div class="hover-action">
-                    <button class="wishlist-btn">♡ WISHLIST</button>
-                    <div class="size-bar">Sizes: XS, S, M, L</div>
-                </div>
+        <!-- VALUE PROPOSITION BANNER -->
+        <section class="promo-strip">
+            <div class="promo-content">
+                <span class="badge-tag">MYNTHRA PERKS</span>
+                <h2>Flat ₹500 OFF + Free Shipping on your first order</h2>
+                <p>Sign up now or apply coupon code at checkout to claim your welcome gift.</p>
+                <button class="btn-dark" onclick="copyCouponCode('MYNTHRA500')">Copy Code: MYNTHRA500 📋</button>
             </div>
-
-            <!-- Card 6 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img class="primary-img" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=350&h=450&fit=crop" alt="Item 6">
-                    <img class="secondary-img" src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?w=350&h=450&fit=crop" alt="Hover">
-                </div>
-                <div class="product-info">
-                    <h3 class="brand">Zara</h3>
-                    <p class="description">Oversized Heavy Denim Jacket</p>
-                    <p class="price">Rs. 2790 <span class="strikethrough">Rs. 4590</span> <span class="discount">(40% OFF)</span></p>
-                </div>
-                <div class="hover-action">
-                    <button class="wishlist-btn">♡ WISHLIST</button>
-                    <div class="size-bar">Sizes: S, M, L</div>
-                </div>
-            </div>
-
-            <!-- Card 7 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img class="primary-img" src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=350&h=450&fit=crop" alt="Item 7">
-                    <img class="secondary-img" src="https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=350&h=450&fit=crop" alt="Hover">
-                </div>
-                <div class="product-info">
-                    <h3 class="brand">Jack & Jones</h3>
-                    <p class="description">Men Checked Slim Fit Shirt</p>
-                    <p class="price">Rs. 899 <span class="strikethrough">Rs. 1999</span> <span class="discount">(55% OFF)</span></p>
-                </div>
-                <div class="hover-action">
-                    <button class="wishlist-btn">♡ WISHLIST</button>
-                    <div class="size-bar">Sizes: S, M, L</div>
-                </div>
-            </div>
-
-            <!-- Card 8 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img class="primary-img" src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=350&h=450&fit=crop" alt="Item 8">
-                    <img class="secondary-img" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=350&h=450&fit=crop" alt="Hover">
-                </div>
-                <div class="product-info">
-                    <h3 class="brand">US Polo Assn</h3>
-                    <p class="description">Solid Cotton Polo Collar T-Shirt</p>
-                    <p class="price">Rs. 799 <span class="strikethrough">Rs. 1599</span> <span class="discount">(50% OFF)</span></p>
-                </div>
-                <div class="hover-action">
-                    <button class="wishlist-btn">♡ WISHLIST</button>
-                    <div class="size-bar">Sizes: S, M, L, XL</div>
-                </div>
-            </div>
-
-            <!-- Additional Cards Grid Loop (Card 9 to 50) -->
-            <div class="product-card"><div class="product-img-box"><img class="primary-img" src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=350&h=450&fit=crop"><img class="secondary-img" src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=350&h=450&fit=crop"></div><div class="product-info"><h3 class="brand">Puma</h3><p class="description">Smash v2 Canvas Sneakers</p><p class="price">Rs. 1799 <span class="strikethrough">Rs. 3599</span> <span class="discount">(50% OFF)</span></p></div><div class="hover-action"><button class="wishlist-btn">♡ WISHLIST</button><div class="size-bar">Sizes: UK 7, 8, 9</div></div></div>
-
-            <div class="product-card"><div class="product-img-box"><img class="primary-img" src="https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=350&h=450&fit=crop"><img class="secondary-img" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=350&h=450&fit=crop"></div><div class="product-info"><h3 class="brand">Flying Machine</h3><p class="description">Tapered Fit Light Blue Jeans</p><p class="price">Rs. 1299 <span class="strikethrough">Rs. 2599</span> <span class="discount">(50% OFF)</span></p></div><div class="hover-action"><button class="wishlist-btn">♡ WISHLIST</button><div class="size-bar">Sizes: 30, 32, 34</div></div></div>
-
-            <div class="product-card"><div class="product-img-box"><img class="primary-img" src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=350&h=450&fit=crop"><img class="secondary-img" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=350&h=450&fit=crop"></div><div class="product-info"><h3 class="brand">HRX</h3><p class="description">Dry-Fit Gym Training T-Shirt</p><p class="price">Rs. 449 <span class="strikethrough">Rs. 999</span> <span class="discount">(55% OFF)</span></p></div><div class="hover-action"><button class="wishlist-btn">♡ WISHLIST</button><div class="size-bar">Sizes: S, M, L</div></div></div>
-
-            <div class="product-card"><div class="product-img-box"><img class="primary-img" src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=350&h=450&fit=crop"><img class="secondary-img" src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=350&h=450&fit=crop"></div><div class="product-info"><h3 class="brand">Allen Solly</h3><p class="description">Formal Slim Fit Cotton Shirt</p><p class="price">Rs. 1099 <span class="strikethrough">Rs. 2199</span> <span class="discount">(50% OFF)</span></p></div><div class="hover-action"><button class="wishlist-btn">♡ WISHLIST</button><div class="size-bar">Sizes: 39, 40, 42</div></div></div>
-
-            <!-- Additional duplicated cards to complete 50+ item display -->
-            <div class="product-card"><div class="product-img-box"><img class="primary-img" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=350&h=450&fit=crop"><img class="secondary-img" src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=350&h=450&fit=crop"></div><div class="product-info"><h3 class="brand">Tommy Hilfiger</h3><p class="description">Classic Logo Crew Neck T-Shirt</p><p class="price">Rs. 1499 <span class="strikethrough">Rs. 2499</span> <span class="discount">(40% OFF)</span></p></div><div class="hover-action"><button class="wishlist-btn">♡ WISHLIST</button><div class="size-bar">Sizes: S, M, L</div></div></div>
-
-            <div class="product-card"><div class="product-img-box"><img class="primary-img" src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=350&h=450&fit=crop"><img class="secondary-img" src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=350&h=450&fit=crop"></div><div class="product-info"><h3 class="brand">Converse</h3><p class="description">Chuck Taylor High Tops</p><p class="price">Rs. 2999 <span class="strikethrough">Rs. 4499</span> <span class="discount">(33% OFF)</span></p></div><div class="hover-action"><button class="wishlist-btn">♡ WISHLIST</button><div class="size-bar">Sizes: UK 7, 8, 9</div></div></div>
-
         </section>
     </main>
 
-    <footer>
+    <!-- FOOTER -->
+    <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-col">
-                <h4>ONLINE SHOPPING</h4>
-                <a href="index.html">Home</a>
-                <a href="tshirts.html">T-Shirts</a>
-                <a href="jeans.html">Jeans</a>
-                <a href="shirts.html">Casual Shirts</a>
+                <a href="#top" class="brand-logo footer-logo">
+                    <span class="logo-mark">M</span>
+                    <span class="logo-text">MYNTHRA</span>
+                </a>
+                <p class="footer-desc">Your ultimate destination for fashion, style, and everyday lifestyle essentials. Crafted with premium quality and curated for you.</p>
+                <div class="social-links">
+                    <span>Instagram</span>
+                    <span>Facebook</span>
+                    <span>Twitter</span>
+                    <span>YouTube</span>
+                </div>
             </div>
+
+            <div class="footer-col">
+                <h4>ONLINE SHOPPING</h4>
+                <ul>
+                    <li><a href="#products" data-category="Men">Men's Apparel</a></li>
+                    <li><a href="#products" data-category="Women">Women's Wear</a></li>
+                    <li><a href="#products" data-category="Footwear">Footwear Collection</a></li>
+                    <li><a href="#products" data-category="Accessories">Watches & Bags</a></li>
+                    <li><a href="#products" data-category="Beauty">Beauty & Skincare</a></li>
+                </ul>
+            </div>
+
             <div class="footer-col">
                 <h4>CUSTOMER POLICIES</h4>
-                <a href="#">Contact Us</a>
-                <a href="#">FAQ</a>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="showToast('Contact Us: support@mynthra.in')">Contact Us</a></li>
+                    <li><a href="javascript:void(0)" onclick="showToast('FAQ: Orders usually dispatch in 24 hrs')">FAQ</a></li>
+                    <li><a href="javascript:void(0)" onclick="showToast('T&C: Transparent pricing & easy shopping')">Terms & Conditions</a></li>
+                    <li><a href="javascript:void(0)" onclick="showToast('Track Order: Check your SMS/email for tracking')">Track Orders</a></li>
+                    <li><a href="javascript:void(0)" onclick="showToast('Returns: 14-day hassle-free doorstep returns')">Returns & Exchanges</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>EXPERIENCE MYNTHRA APP</h4>
+                <p class="app-note">Shop on the go with real-time tracking and exclusive early-access sales.</p>
+                <div class="download-badges">
+                    <button class="store-badge" onclick="showToast('App Store download coming soon!')">🍏 App Store</button>
+                    <button class="store-badge" onclick="showToast('Google Play download coming soon!')">▶ Google Play</button>
+                </div>
+                <div class="guarantee-box">
+                    <span>🛡️ <b>100% SECURE</b> checkout with 256-bit SSL encryption.</span>
+                </div>
             </div>
         </div>
-        <div class="copyright">© 2026 www.mynstra.com. All rights reserved.</div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Mynthra Fashion Pvt Ltd. All rights reserved.</p>
+            <p>Designed for realistic, intuitive, and modern e-commerce shopping experience.</p>
+        </div>
     </footer>
 
+    <!-- SLIDE-OVER CART / BAG DRAWER -->
+    <div class="drawer-backdrop" id="cartBackdrop"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Bag">
+        <div class="drawer-header">
+            <div class="drawer-title">
+                <h3>Shopping Bag</h3>
+                <span class="drawer-count" id="drawerCartCount">(0 items)</span>
+            </div>
+            <button class="close-drawer-btn" id="closeCartBtn" aria-label="Close Shopping Bag">✕</button>
+        </div>
+
+        <!-- Cart Items List -->
+        <div class="drawer-body" id="cartItemsList">
+            <!-- Dynamically populated via script.js -->
+        </div>
+
+        <!-- Cart Summary / Footer -->
+        <div class="drawer-footer" id="cartFooter">
+            <!-- Coupon Code Section -->
+            <div class="coupon-section">
+                <div class="coupon-input-group">
+                    <input type="text" id="couponInput" placeholder="Enter Coupon Code (MYNTHRA500)" uppercase>
+                    <button id="applyCouponBtn">APPLY</button>
+                </div>
+                <div class="applied-coupon-tag" id="appliedCouponTag" hidden>
+                    <span>Coupon <b>MYNTHRA500</b> applied (-₹500)</span>
+                    <button id="removeCouponBtn">✕</button>
+                </div>
+            </div>
+
+            <!-- Price Breakdown -->
+            <div class="bill-details">
+                <div class="bill-row">
+                    <span>Total MRP</span>
+                    <span id="billTotalMrp">₹0</span>
+                </div>
+                <div class="bill-row">
+                    <span>Discount on MRP</span>
+                    <span class="text-green" id="billDiscount">- ₹0</span>
+                </div>
+                <div class="bill-row" id="billCouponRow" hidden>
+                    <span>Coupon Discount</span>
+                    <span class="text-green" id="billCoupon">- ₹0</span>
+                </div>
+                <div class="bill-row">
+                    <span>Convenience Fee</span>
+                    <span class="text-green">FREE</span>
+                </div>
+                <div class="bill-divider"></div>
+                <div class="bill-row total-row">
+                    <span>Total Amount</span>
+                    <strong id="billFinalTotal">₹0</strong>
+                </div>
+            </div>
+
+            <button class="btn-checkout" id="checkoutBtn">PLACE ORDER →</button>
+        </div>
+    </aside>
+
+    <!-- WISHLIST MODAL -->
+    <div class="drawer-backdrop" id="wishlistBackdrop"></div>
+    <aside class="cart-drawer wishlist-drawer" id="wishlistDrawer" aria-label="Wishlist">
+        <div class="drawer-header">
+            <div class="drawer-title">
+                <h3>My Wishlist</h3>
+                <span class="drawer-count" id="drawerWishlistCount">(0 items)</span>
+            </div>
+            <button class="close-drawer-btn" id="closeWishlistBtn" aria-label="Close Wishlist">✕</button>
+        </div>
+        <div class="drawer-body" id="wishlistItemsList">
+            <!-- Dynamically populated via script.js -->
+        </div>
+    </aside>
+
+    <!-- QUICK VIEW PRODUCT MODAL -->
+    <div class="modal-backdrop" id="quickViewBackdrop"></div>
+    <div class="quickview-modal" id="quickViewModal">
+        <button class="modal-close-btn" id="closeQuickViewBtn" aria-label="Close preview">✕</button>
+        <div class="modal-content" id="quickViewContent">
+            <!-- Injected dynamically -->
+        </div>
+    </div>
+
+    <!-- ORDER SUCCESS CONFIRMATION MODAL -->
+    <div class="modal-backdrop" id="orderSuccessBackdrop"></div>
+    <div class="success-modal" id="orderSuccessModal">
+        <div class="success-icon">✓</div>
+        <h2>Order Confirmed!</h2>
+        <p>Thank you for shopping with <b>Mynthra</b>. Your order has been placed successfully and will be delivered within 2-3 business days.</p>
+        <div class="order-details-box" id="successOrderDetails"></div>
+        <button class="btn-primary" id="continueShoppingBtn">Continue Shopping</button>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast-snackbar" id="toastSnackbar" role="status"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
