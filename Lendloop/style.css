@@ -1,0 +1,325 @@
+/* Basic Setup */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f5f9;
+    color: #333333;
+}
+
+/* Header */
+
+.header {
+    background-color: #142b52;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.logo {
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.header p {
+    margin: 8px;
+}
+
+.header span {
+    font-size: 13px;
+    color: #d9e4f5;
+}
+
+/* Navigation */
+
+.navbar {
+    background-color: #203d6b;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 14px;
+}
+
+.navbar a:hover {
+    color: #ffd166;
+}
+
+/* Sections */
+
+section {
+    background-color: white;
+    width: 90%;
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+section h2 {
+    color: #142b52;
+    margin-top: 0;
+}
+
+.intro {
+    color: #666666;
+}
+
+/* Welcome */
+
+.welcome {
+    text-align: center;
+    background-color: #e5edfa;
+    padding: 50px 20px;
+}
+
+.welcome h1 {
+    color: #142b52;
+    font-size: 30px;
+}
+
+/* Buttons */
+
+.button {
+    display: inline-block;
+    background-color: #203d6b;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.button:hover {
+    background-color: #31578e;
+}
+
+/* Forms and Inputs */
+
+.form-box {
+    background-color: #f4f6fa;
+    padding: 20px;
+    border-radius: 7px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Profile */
+
+#profileForm {
+    max-width: 450px;
+}
+
+#profileForm .button {
+    margin-top: 5px;
+}
+
+#profileMessage {
+    color: #176b39;
+}
+
+/* Dashboard */
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.stat-card {
+    background-color: #eaf0fa;
+    padding: 18px;
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    border-radius: 7px;
+}
+
+.stat-card h3 {
+    color: #203d6b;
+    font-size: 28px;
+    margin: 5px;
+}
+
+/* Search and Categories */
+
+#searchInput {
+    margin-top: 12px;
+}
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0 20px;
+}
+
+.category-button {
+    background-color: #eaf0fa;
+    color: #203d6b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.category-button.active {
+    background-color: #203d6b;
+    color: white;
+}
+
+/* Item Cards */
+
+.item-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.item-card {
+    background-color: #f4f6fa;
+    border: 1px solid #dddddd;
+    border-radius: 7px;
+    padding: 18px;
+    flex: 1;
+    min-width: 230px;
+}
+
+.item-card h3 {
+    color: #203d6b;
+}
+
+.item-category {
+    color: #526b91;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.item-owner {
+    font-size: 13px;
+    color: #666666;
+}
+
+.item-card button {
+    margin-top: 10px;
+}
+
+/* Requests */
+
+.request-card {
+    background-color: #f4f6fa;
+    padding: 18px;
+    border: 1px solid #dddddd;
+    border-radius: 7px;
+    margin: 12px 0;
+}
+
+.request-card h3 {
+    color: #203d6b;
+}
+
+.status {
+    font-weight: bold;
+    color: #203d6b;
+}
+
+.request-card button {
+    margin: 5px 5px 5px 0;
+}
+
+.secondary-button {
+    background-color: #64748b;
+    color: white;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.danger-button {
+    background-color: #b83232;
+    color: white;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Empty Message */
+
+.empty-message {
+    color: #777777;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Footer */
+
+footer {
+    background-color: #142b52;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 30px;
+}
+
+/* Mobile Design */
+
+@media (max-width: 650px) {
+
+    .navbar a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    section {
+        width: 94%;
+        padding: 18px;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .item-container {
+        flex-direction: column;
+    }
+
+    .welcome h1 {
+        font-size: 24px;
+    }
+}
