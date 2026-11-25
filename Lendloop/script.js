@@ -1,6 +1,4 @@
-// LendLoop - SRMU Campus Resource Sharing Platform
 
-// Get saved information from browser storage
 
 let items = JSON.parse(localStorage.getItem("lendloopItems")) || [];
 
@@ -10,7 +8,7 @@ let student = localStorage.getItem("lendloopStudent") || "Sumit Pandey";
 
 let selectedCategory = "All";
 
-// Sample items for first-time demonstration
+
 
 if (items.length === 0) {
 
@@ -52,7 +50,7 @@ if (items.length === 0) {
     localStorage.setItem("lendloopItems", JSON.stringify(items));
 }
 
-// Save all data
+
 
 function saveData() {
 
@@ -63,7 +61,7 @@ function saveData() {
     localStorage.setItem("lendloopStudent", student);
 }
 
-// Escape user-entered text before displaying it in HTML
+
 
 function safeText(value) {
     return String(value).replace(/[&<>"']/g, function(character) {
@@ -77,14 +75,13 @@ function safeText(value) {
     });
 }
 
-// Display student profile
 
 function displayProfile() {
 
     document.getElementById("studentName").value = student;
 }
 
-// Save student name
+
 
 document.getElementById("profileForm").addEventListener("submit", function(event) {
 
@@ -110,7 +107,7 @@ document.getElementById("profileForm").addEventListener("submit", function(event
         "Profile name saved successfully.";
 });
 
-// Display available items
+
 
 function displayItems() {
 
@@ -180,7 +177,7 @@ function displayItems() {
     updateDashboard();
 }
 
-// Search items
+
 
 document.getElementById("searchInput").addEventListener("input", function() {
 
@@ -188,7 +185,7 @@ document.getElementById("searchInput").addEventListener("input", function() {
 
 });
 
-// Category filter buttons
+
 
 document.querySelectorAll(".category-button").forEach(function(button) {
 
@@ -208,7 +205,6 @@ document.querySelectorAll(".category-button").forEach(function(button) {
 
 });
 
-// Add a new item
 
 document.getElementById("itemForm").addEventListener("submit", function(event) {
 
@@ -252,7 +248,7 @@ document.getElementById("itemForm").addEventListener("submit", function(event) {
 
 });
 
-// Delete your own item
+
 
 function deleteItem(id) {
 
@@ -284,7 +280,7 @@ function deleteItem(id) {
 
 }
 
-// Send borrowing request
+
 
 function sendRequest(itemId) {
 
@@ -344,7 +340,6 @@ function sendRequest(itemId) {
 
 }
 
-// Display requests
 
 function displayRequests() {
 
@@ -367,7 +362,7 @@ function displayRequests() {
 
         let actionHTML = "";
 
-        // Owner can accept or reject pending requests
+    
 
         if (request.owner === student && request.status === "Pending") {
 
@@ -385,8 +380,7 @@ function displayRequests() {
 
         }
 
-        // Borrower can mark an accepted item as returned
-
+        
         if (request.borrower === student && request.status === "Borrowed") {
 
             actionHTML = `
@@ -417,7 +411,7 @@ function displayRequests() {
     updateDashboard();
 }
 
-// Accept request
+
 
 function acceptRequest(id) {
 
@@ -453,7 +447,7 @@ function acceptRequest(id) {
 
 }
 
-// Reject request
+
 
 function rejectRequest(id) {
 
@@ -474,7 +468,6 @@ function rejectRequest(id) {
 
 }
 
-// Return item
 
 function returnItem(id) {
 
@@ -507,7 +500,7 @@ function returnItem(id) {
 
 }
 
-// Update dashboard
+
 
 function updateDashboard() {
 
@@ -541,7 +534,7 @@ function updateDashboard() {
         activeBorrowings.length;
 }
 
-// Start the website
+
 
 displayProfile();
 
