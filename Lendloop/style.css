@@ -1,4 +1,4 @@
-/* Basic Setup */
+
 
 * {
     box-sizing: border-box;
@@ -15,7 +15,7 @@ body {
     color: #333333;
 }
 
-/* Header */
+
 
 .header {
     background-color: #142b52;
@@ -38,7 +38,6 @@ body {
     color: #d9e4f5;
 }
 
-/* Navigation */
 
 .navbar {
     background-color: #203d6b;
@@ -57,7 +56,7 @@ body {
     color: #ffd166;
 }
 
-/* Sections */
+
 
 section {
     background-color: white;
@@ -77,7 +76,7 @@ section h2 {
     color: #666666;
 }
 
-/* Welcome */
+
 
 .welcome {
     text-align: center;
@@ -90,7 +89,7 @@ section h2 {
     font-size: 30px;
 }
 
-/* Buttons */
+
 
 .button {
     display: inline-block;
@@ -107,8 +106,6 @@ section h2 {
 .button:hover {
     background-color: #31578e;
 }
-
-/* Forms and Inputs */
 
 .form-box {
     background-color: #f4f6fa;
@@ -138,7 +135,6 @@ textarea {
     resize: vertical;
 }
 
-/* Profile */
 
 #profileForm {
     max-width: 450px;
@@ -152,7 +148,7 @@ textarea {
     color: #176b39;
 }
 
-/* Dashboard */
+
 
 .stats {
     display: flex;
@@ -175,7 +171,7 @@ textarea {
     margin: 5px;
 }
 
-/* Search and Categories */
+
 
 #searchInput {
     margin-top: 12px;
@@ -202,7 +198,7 @@ textarea {
     color: white;
 }
 
-/* Item Cards */
+
 
 .item-container {
     display: flex;
@@ -238,7 +234,7 @@ textarea {
     margin-top: 10px;
 }
 
-/* Requests */
+
 
 .request-card {
     background-color: #f4f6fa;
@@ -279,7 +275,7 @@ textarea {
     cursor: pointer;
 }
 
-/* Empty Message */
+
 
 .empty-message {
     color: #777777;
@@ -287,7 +283,7 @@ textarea {
     padding: 15px;
 }
 
-/* Footer */
+
 
 footer {
     background-color: #142b52;
@@ -297,7 +293,7 @@ footer {
     margin-top: 30px;
 }
 
-/* Mobile Design */
+
 
 @media (max-width: 650px) {
 
